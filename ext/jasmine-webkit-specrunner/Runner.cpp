@@ -56,7 +56,7 @@ void Runner::handleError(const QString &message, int lineNumber, const QString &
   QString command("JHW._handleError(\"" + messageEscaped + "\", " + QString(ss.str().c_str()) + ", \"" + sourceIDEscaped + "\"); false;");
 
   page.mainFrame()->evaluateJavaScript(command);
-
+  print("stdout", command);
   hasErrors = true;
 }
 
